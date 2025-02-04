@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./plan-type-header.component.css']
 })
 export class PlanTypeHeaderComponent {
+  constructor() {
 
+  }
+  ngOnInit(): void {
+
+  }
+  getPolicyType() {
+
+  }
 }

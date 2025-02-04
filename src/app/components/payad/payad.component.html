@@ -1,1 +1,22 @@
-<p>payad works!</p>
+<div class="payad-container">
+        <div class="titleHolder">
+            <div class="title-text">
+                <strong>Pay As You Drive! </strong>Pay when you drive, save when you don't!
+            </div>
+            <a class="open-link">How it works?</a>
+        </div>
+        <div class="slider-premium">
+        <div class="slider-container">
+            <div class="track-fill" #trackFill class="d-none"></div>
+            <input type="range" #slider min="0" [max]="sliderValues.length - 1" step="1" value="2" (input)="updateSlider()">
+
+            <div class="labels">
+                <div *ngFor="let value of sliderValues" class="label">
+                    <span>{{ value.km }}</span>
+                    <div *ngIf="value.discount" class="discount">Discount {{ value.discount }}</div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+</div>

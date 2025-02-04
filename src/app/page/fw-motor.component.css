@@ -1,8 +1,10 @@
 .fw-motor-page{
-    padding: 0;
+    padding: 20px;
     margin: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 .fw-motor-page .box-container{
     border: 1px solid rgba(253, 250, 250, 0);
@@ -15,7 +17,7 @@
 .fw-motor-page .box-container .leftSide-content{
     width: 70%;
     height: inherit;
-    padding: 20px;
+    padding: 0 20px;
     /* background-color: aliceblue; */
 }
 .fw-motor-page .box-container .rightSide-content{

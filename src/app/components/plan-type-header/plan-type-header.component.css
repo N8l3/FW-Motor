@@ -1,9 +1,10 @@
 .header-panel{
     border-radius: 14px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     /* box-shadow: 0 0 5px 0 rgba(0,0,0,0.1); */
     border: 1px solid #BDBDBD;
-    max-width: 920px;
+    max-width: 880px;
+    cursor: default;
 }
 .header-panel .policy-title{
     display: flex;
@@ -36,6 +37,7 @@
     flex:4;
     font-size: 12px;
     justify-content: justify;
+    font-weight: 500;
 }
 .icon{
     font-size: 26px;
@@ -90,4 +92,8 @@
         font-size: 11px;
         padding: 12px;
     }
+}
+@keyframes skeleton-loading {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
