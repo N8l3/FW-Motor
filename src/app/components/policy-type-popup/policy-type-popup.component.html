@@ -1,1 +1,41 @@
-<p>policy-type-popup works!</p>
+<!-- Popup Modal -->
+<div class="popup-overlay" *ngIf="contentType === 'policyTypePopup'">
+    <div class="popup-content">
+      
+      <!-- Close Button -->
+      <button class="close-btn" (click)="close()">X</button>
+  
+      <h3 class="popup-title">Choose your policy type</h3>
+  
+      <!-- Dynamic Policy Options -->
+      <div 
+        class="policy-option" 
+        *ngFor="let policy of policies"
+        [class.selected]="selectedPolicy === policy.type" 
+        (click)="selectPolicy(policy.type)">
+  
+        <div class="option-header">
+          <input type="radio" name="policy" [value]="policy.type" [(ngModel)]="selectedPolicy">
+          <span class="custom-radio"></span>
+          <label>
+            {{ policy.title }} 
+            <span *ngIf="policy.description" class="desc">{{ policy.description }}</span>
+          </label>
+          <span class="tick" *ngIf="selectedPolicy === policy.type"></span>
+        </div>
+  
+        <div class="policy-details">
+          <p *ngFor="let detail of policy.details">
+             <span class="highlight">{{ detail.label }}:</span> {{ detail.content }}
+          </p>
+          <p class="note" *ngIf="policy.note">{{ policy.note }}</p>
+        </div>
+  
+      </div>
+  
+      <!-- Proceed Button -->
+      <button class="proceed-btn">Proceed</button>
+  
+    </div>
+  </div>
+  

@@ -7,24 +7,20 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class PAYADComponent {
 
-  @ViewChild('slider') slider!: ElementRef;
-  @ViewChild('trackFill') trackFill!: ElementRef;
-
-  // Labels and discount data
+  selectedIndex: number = 2; // Default selection
   sliderValues = [
-    { km: '2,500 km', discount: '₹1,116' },
-    { km: '5,000 km', discount: '₹990' },
-    { km: '7,500 km', discount: '₹787' },
-    { km: '10,000 km', discount: '₹487' },
-    { km: 'Unlimited km', discount: '' }
+    { km: '2,500 km', discount: '79,563' },
+    { km: '5,000 km', discount: '1,43,311' },
+    { km: '7,500 km', discount: '1,51,618' },
+    { km: '10,000 km', discount: '1,61,586' },
+    { km: 'Unlimited km' }
   ];
 
   ngAfterViewInit(): void {
     this.updateSlider();
   }
 
-  updateSlider(): void {
-    const percent = (this.slider.nativeElement.value / (this.sliderValues.length - 1)) * 100;
-    this.trackFill.nativeElement.style.width = percent + '%';
+  updateSlider() {
+    console.log("Selected:", this.selectedIndex);
   }
 }

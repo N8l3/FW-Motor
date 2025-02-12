@@ -1,18 +1,50 @@
-<div class="header-panel skeleton">
-    <div class="policy-title">
-        <span class="policy-type skeleton-text">
-            Policy type: <b>Comprehensive Policy</b>
-        </span>
-        <a class="policy-type-link skeleton-text open-link" (click)="getPolicyType()">Want Own damage policy?</a>
-    </div>
-    <div class="policy-content">
-        <div class="content od skeleton-text">
-            <strong>Own Damage: </strong>Covers expenses related to the damage or destruction of your vehicle from an accident or other collision
+<div class="container-full">
+    <div class="row align-items-start header-panel g-0">
+        <!-- Left Column - Policy Type -->
+        <div class="col-md-6">
+            <div class="policy-section">
+                <p class="label">Policy type:</p>
+                
+                <div class="d-flex align-items-center">
+                   <!-- Back Button -->
+                    
+                    <div class="radio-group d-flex align-items-center">
+                        <button class="back-button">&lt;</button>
+                        <label class="radio">
+                            <input type="radio" name="policy" [(ngModel)]="selectedPolicy" value="comprehensive">
+                            <span>Comprehensive Policy</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="policy" [(ngModel)]="selectedPolicy" value="thirdParty">
+                            <span>Third Party Policy</span>
+                        </label>
+                        <label class="radio">
+                            <a href="#" class="damage-policy" (click)="openPolicyTypePopup()">Want an Own Damage policy?</a>
+                        </label>
+                    </div>
+                </div>
+                
+                <p class="subtext">
+                    This policy includes Own Damage (OD) + Third Party (TP)  
+                    <a class="knowMore">Know more</a>
+                </p>
+            </div>
         </div>
-        <div class="content icon skeleton-text">+</div>
-        <div class="content third skeleton-text">
-            <strong>Third Party: </strong>Covers expenses related to injury, death or property damage of others when you're at fault
+
+        <!-- Right Column - Policy Tenure -->
+        <div class="col-md-6">
+            <div class="policy-section">
+                <p class="label">Policy tenure:</p>
+                <div class="d-flex tenure-group">
+                    <label class="option" 
+                        *ngFor="let tenure of tenures" 
+                        [class.selected]="selectedTenure === tenure.value"
+                        (click)="selectTenure(tenure.value)">
+                        <input type="radio" name="tenure" [value]="tenure.value" [(ngModel)]="selectedTenure">
+                        <span>{{ tenure.label }} <span *ngIf="tenure.discount" class="save">{{ tenure.discount }}</span></span>
+                    </label>
+                </div>
+            </div>
         </div>
-        <a class="content link skeleton-text open-link">Know more</a>
     </div>
 </div>

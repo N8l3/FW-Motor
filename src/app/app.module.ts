@@ -24,6 +24,7 @@ import { PolicyDurationPopupComponent } from './components/policy-duration-popup
 import { PAYADHIWPopupComponent } from './components/payad-hiw-popup/payad-hiw-popup.component';
 import { LeftSidePanelComponent } from './components/left-side-panel/left-side-panel.component';
 import { RightSidePanelComponent } from './components/right-side-panel/right-side-panel.component';
+import { OverlaySidePanelComponent } from './Shared/overlay-side-panel/overlay-side-panel.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { RightSidePanelComponent } from './components/right-side-panel/right-sid
     PolicyDurationPopupComponent,
     PAYADHIWPopupComponent,
     LeftSidePanelComponent,
-    RightSidePanelComponent
+    RightSidePanelComponent,
+    OverlaySidePanelComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import { RightSidePanelComponent } from './components/right-side-panel/right-sid
     FormsModule,
     HttpClientModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

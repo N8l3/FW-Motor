@@ -1,1 +1,54 @@
-<p>premium-summary works!</p>
+<div class="premium-summary">
+    <div class="summary-header">
+      <img src="../../../assets/image (8).png" alt="Premium Icon" class="premium-icon" />
+      <span class="summary-title">Premium summary</span>
+    </div>
+  
+    <div class="summary-item">
+      <span>Base premium</span>
+      <span>₹ {{ basePremium | number:'1.0-0' }}</span>
+    </div>
+  
+    <!-- Additional Covers (Collapsible Section) -->
+    <div class="summary-item additional-covers">
+      <span class="cover-title">
+        Additional covers
+        <button class="expand-btn" (click)="toggleAdditionalCovers()">
+          <img 
+            src="../../../assets/down-arrow.png" 
+            [class.expanded]="isExpanded" 
+            alt="Expand Icon" 
+          />
+        </button>
+      </span>
+      <span>₹ {{ additionalCovers | number:'1.0-0' }}</span>
+    </div>
+  
+    <!-- Expanded Covers List -->
+    <div *ngIf="isExpanded" class="additional-cover-details">
+      <div *ngFor="let cover of additionalCoverList" class="summary-item">
+        <span>{{ cover.name }}</span>
+        <span>₹ {{ cover.amount | number:'1.0-0' }}</span>
+      </div>
+    </div>
+  
+    <div class="summary-item subtotal">
+      <span>Sub Total</span>
+      <span>₹ {{ subTotal | number:'1.0-0' }}</span>
+    </div>
+  
+    <div class="summary-item discount">
+      <span>Discount</span>
+      <span class="discount-amount">-₹{{ discount | number:'1.0-0' }}</span>
+    </div>
+  
+    <hr class="divider" />
+  
+    <div class="summary-item total">
+      <span>Total Premium</span>
+      <span class="total-amount">₹{{ totalPremium | number:'1.0-0' }}</span>
+    </div>
+  
+    <p class="gst-info">+({{ gstPercentage }}% GST)</p>
+  </div>
+  

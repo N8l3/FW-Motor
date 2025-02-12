@@ -1,0 +1,7 @@
+<div class="slider-panel" [class.open]="isOpen">
+    <button class="close-btn" (click)="close()">X</button>
+    <ng-container *ngIf="contentType === 'vehicle-details'">
+        <app-vehicle-details-popup></app-vehicle-details-popup>
+    </ng-container>
+</div>
+<div class="overlay"></div>

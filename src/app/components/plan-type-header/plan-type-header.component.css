@@ -1,99 +1,218 @@
-.header-panel{
-    border-radius: 14px;
-    /* margin-bottom: 10px; */
-    /* box-shadow: 0 0 5px 0 rgba(0,0,0,0.1); */
-    border: 1px solid #BDBDBD;
-    max-width: 880px;
-    cursor: default;
-}
-.header-panel .policy-title{
+/* Header Panel */
+.container-full {
+    width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.header-panel {
+    height: 109px;
+    background: #F5F5F5 !important;
     padding: 10px 20px;
-    background-color: #FAFAFA;
-    border-radius: 14px 14px 0 0;
-    height: 58px;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.header-panel .col-md-6 {
+    padding: 5px 10px; /* Adjust as needed to reduce gap */
+}
+
+/* Full-Width Container */
+
+
+/* Policy Section */
+.policy-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything */
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Labels */
+.label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: start; /* Ensure label is centered */
+    margin-left: 100px;;
+}
+.subtext {
+    font-size: 12px;
+    font-family: Mulish, sans-serif;
+}
+
+.knowMore {
+    font-size: 12px;
+    font-weight: 700;
+    color: #EC6625 !important;
+    text-decoration: underline;
+}
+
+/* Radio Buttons Group */
+.radio-group {
+    display: flex;
     align-items: center;
+    gap: 12px;
+    margin-bottom: 5px;
+    justify-content: center; /* Center items */
+    width: 100%;
+}
+
+/* Radio Buttons */
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 14px;
 }
-.header-panel .policy-title a.policy-type-link{
-    color: #EC6625;
-    text-decoration: underline;
-    cursor: pointer;
+
+.radio input {
+    accent-color: #e95926 !important;
 }
-.header-panel .policy-content{
-    padding: 10px 20px;
+
+/* "Want an Own Damage Policy?" Link */
+.damage-policy {
     font-size: 12px;
-    font-weight: 400;
-    color: #333;
-    background-color: #FFFFFF;
+    font-weight: 700;
+    color: #EC6625 !important;
+    text-decoration: underline;
     display: flex;
-    gap: 20px;
-    border-radius: 0 0 14px 14px;
-    /* height: 62px; */
     align-items: center;
 }
-.od,.third{
-    flex:4;
-    font-size: 12px;
-    justify-content: justify;
-    font-weight: 500;
+
+/* Policy Tenure Section */
+.tenure-group {
+    display: flex;
+    gap: 13px;
+    justify-content: center; /* Center tenure options */
+    width: 100%;
 }
-.icon{
-    font-size: 26px;
-    font-weight: 700;
-}
-.link{
-    flex:1;
-    color: #EC6625;
-    text-decoration: underline;
+
+/* Common styling for tenure options */
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc !important;
+    width: 120px; /* Fixed width */
+    height: 43px; /* Fixed height */
+    border-radius: 12px;
+    font-size: 14px;
     cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    overflow: visible !important;
+    background: #FFFFFF !important;
 }
+
+/* Hide default radio button */
+.option input {
+    display: none;
+}
+
+/* Circular radio inside option */
+.option::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ccc !important;
+    color: #FFFFFF;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+/* Selected state */
+.option.selected {
+    border: 2px solid #e95926 !important;
+    background-color: #fde8df !important;
+    color: #e95926 !important;
+}
+
+/* Selected state: tick mark */
+.option.selected::before {
+    background: #e95926 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20.285 6.708a1 1 0 00-1.57-1.23L9.56 16.33l-4.26-4.276a1 1 0 10-1.42 1.41l5 5a1 1 0 001.43 0l10-10.256z"></path></svg>') no-repeat center;
+    background-size: 10px;
+    border: none;
+}
+
+/* Discount text */
+.option .save {
+    width: 77px;
+    height: 18px;
+    background-color: #F5FDEE;
+    color: #008000; /* Dark green to match the theme */
+    font-family: Mulish, sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 12.55px;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    border: 1px solid #008000; /* Green border */
+}
+.back-button {
+    width: 36px;  /* Increased size for better visibility */
+    height: 36px;
+    border: 1px solid #EC6625;
+    border-radius: 50%; /* Ensures a perfect circle */
+    background: #FFFFFF;
+    color: #EC6625;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    margin-right: 5px; /* Space between the button and policy selection */
+    padding: 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    transition: all 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .header-panel .policy-title {
+    .header-panel {
         flex-direction: column;
         align-items: center;
-        height: auto;
-        padding: 15px;
-        gap: 10px;
     }
 
-    .header-panel .policy-content {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center; /* Center align all items */
-        padding: 15px;
+    .policy-section {
+        align-items: center;
         text-align: center;
     }
 
-    .content.icon {
-        display: flex;
-        justify-content: center;
+    .radio-group {
+        flex-direction: column;
         align-items: center;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header-panel {
-        border-radius: 10px;
     }
 
-    .header-panel .policy-title {
-        font-size: 12px;
-        padding: 12px;
-        display: flex;
+    .tenure-group {
+        flex-direction: column;
         align-items: center;
-        gap: 10px;
     }
-
-    .header-panel .policy-content {
-        font-size: 11px;
-        padding: 12px;
-    }
-}
-@keyframes skeleton-loading {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
 }

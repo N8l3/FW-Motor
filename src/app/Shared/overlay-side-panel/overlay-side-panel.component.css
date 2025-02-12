@@ -1,0 +1,63 @@
+/* Overlay to hide the rest of the page */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3); /* Grey transparent background */
+    z-index: 999;
+    display: none; /* Initially hidden */
+}
+
+/* Show overlay when slider is open */
+.slider-panel.open + .overlay {
+    display: block;
+}
+
+/* Slider panel */
+.slider-panel {
+    position: fixed;
+    top: 0;
+    right: -500px; /* Initially hidden */
+    width: 500px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000; /* Above overlay */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden;
+}
+
+/* When slider opens */
+.slider-panel.open {
+    right: 0;
+}
+
+/* Close button */
+.slider-panel .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background: var(--Neutral-20, #EEEFF0); /* Grey circle */
+    
+    border: none;
+    border-radius: 50%; /* Makes it a circle */
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    z-index: 1000; /* Ensure it stays above all */
+}
+
+.slider-panel .close-btn:hover {
+    background: #ddd; /* Slightly darker grey on hover */
+}
+
+

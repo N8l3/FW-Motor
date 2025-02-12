@@ -1,0 +1,106 @@
+.premium-summary {
+    background: #F7F3F2;
+    border-radius: 14px;
+    width: 100%;
+    padding: 15px;
+    font-family: 'Mullish', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .summary-header {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #282828;
+  }
+  
+  .premium-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #282828;
+    align-items: center;
+    padding: 5px 0;
+  }
+  
+  .additional-covers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cover-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .expand-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .expand-btn img {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+  }
+  
+  .expanded {
+    transform: rotate(180deg);
+  }
+  
+  .additional-cover-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: slideDown 0.3s ease-in-out;
+  }
+  
+  .subtotal {
+    font-weight: bold;
+  }
+  
+  .discount {
+    color: green;
+  }
+  
+  .discount-amount {
+    color: #008000;
+    font-weight: bold;
+  }
+  
+  .divider {
+    border: none;
+    height: 1px;
+    background: #BDBDBD;
+    margin: 5px 0;
+  }
+  
+  .total {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .total-amount {
+    font-weight: bold;
+  }
+  
+  .gst-info {
+    font-size: 12px;
+    color: #757575;
+    text-align: right;
+    margin-top: -5px;
+  }
+  

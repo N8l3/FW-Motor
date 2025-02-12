@@ -1,0 +1,111 @@
+.idv-container {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 500px;
+   
+}
+
+/* Labels Section (Stacked) */
+.idv-label {
+    font-family: "Mullish", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #212121;
+    margin-bottom: 5px;
+}
+
+/* "What is IDV?" Link */
+.idv-link {
+    flex:1;
+    color: #EC6625;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Input Field */
+.idv-input {
+    width: 100%;
+    max-width: 150px; /* Adjusted for balance */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Slider Styling */
+/* Slider Container */
+/* Slider Container */
+.slider-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Track Background */
+.idv-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ddd;
+}
+
+/* Track Bar (Fix Alignment) */
+.idv-slider::-webkit-slider-runnable-track {
+    background: #03602E;
+    height: 6px;
+    border-radius: 5px;
+}
+
+/* Custom Slider Thumb */
+.idv-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px; /* Increased size */
+    height: 30px; /* Increased size */
+    background: white;
+    border: 4px solid #EC6625;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-40%);
+}
+
+/* Add "<>" inside the thumb */
+.idv-slider::-webkit-slider-thumb::before {
+    content: "< >";
+    font-size: 12px;
+    font-weight: bold;
+    color: #EC6625;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+/* Min-Max Labels */
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Info Text */
+.info-text {
+    margin-top: 15px;
+    font-size: 14px;
+  color: #03602E;
+    
+}

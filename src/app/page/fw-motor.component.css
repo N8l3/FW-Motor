@@ -1,28 +1,49 @@
-.fw-motor-page{
-    padding: 20px;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+.fw-motor-container {
     display: flex;
-    justify-content: center;
-}
-.fw-motor-page .box-container{
-    border: 1px solid rgba(253, 250, 250, 0);
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Fixed Full-Width Header */
+.header-panel {
+    width: 100%;
+    height: 109px;
+}
+
+/* Content Layout (Below Header) */
+.content-container {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    gap: 40px;
+    padding: 20px 60px;
+    align-items: flex-start;
 }
-.fw-motor-page .box-container .leftSide-content{
-    width: 70%;
-    height: inherit;
-    padding: 0 20px;
-    /* background-color: aliceblue; */
+
+/* Left Content (70%) */
+.left-content {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.fw-motor-page .box-container .rightSide-content{
-    width: 30%;
-    padding: 20px;
-    height: inherit;
-    background-color: rgb(255, 204, 138);
+
+/* Right Content (30%) */
+.right-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .left-content,
+    .right-content {
+        flex: 1;
+    }
 }

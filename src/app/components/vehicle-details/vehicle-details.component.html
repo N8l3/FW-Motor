@@ -1,1 +1,110 @@
-<p>vehicle-details works!</p>
+<div class="vehicle-details">
+  <div class="customer-section">
+    <div class="customer-name">Hi, {{ customerName }}</div>
+  </div>
+
+  <div class="vehicle-info">
+    <div class="row">
+      <!-- Vehicle Model and Details in one column -->
+      <div class="col-8 vehicle-details-column">
+        <div class="info-value">
+          <strong>{{ vehicleModel }}</strong> {{ engineCapacity }} CC
+        </div>
+        <div class="info-value">
+          {{ vehicleNumber }} | {{ fuelType }} | {{ vehicleYear }}
+        </div>
+      </div>
+
+      <!-- Edit link with pencil icon -->
+      <div
+        class="col4- d-flex justify-content-center align-items-center edit-column"
+      >
+        <a class="edit-link" (click)="openVehicleDetailsPopup()">
+          <i class="fas fa-pencil-alt"></i> Edit
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="idv-slider">
+    <app-idv-slider></app-idv-slider>
+  </div>
+
+  <div class="additional-details">
+    <div class="detail-row">
+      <div class="detail-label">
+        Applicable No Claim Bonus (NCB)
+        <span class="info-icon">i</span>
+      </div>
+      <div class="detail-value">{{ ncb }}%</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-label">
+        Policy End Date
+        <span class="info-icon">i</span>
+      </div>
+      <div class="detail-value">
+        {{ policyEndDate }}
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-label">
+        Registered under Individual
+        <span class="info-icon">i</span>
+      </div>
+      <div class="detail-value">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="registeredUnderIndividual" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-label">
+        ZD Cover in Previous Policy
+        <span class="info-icon">i</span>
+      </div>
+      <div class="detail-value">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="zdCoverPrevious" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-label">
+        Previous Policy Type
+        <span class="info-icon">i</span>
+      </div>
+      <div class="detail-value">
+        <select [(ngModel)]="previousPolicyType">
+          <option value="Comprehensive">Comprehensive</option>
+          <option value="Third-Party">Third-Party</option>
+          <option value="Own Damage">Own Damage</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-label">
+        Was the Ownership Transferred during Previous Year?
+        <span class="info-icon">i</span>
+      </div>
+      <div class="detail-value">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="ownershipTransferred" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <app-cibi-score-option></app-cibi-score-option>
+</div>
+<div>
+  <app-premium-summary></app-premium-summary>
+</div>

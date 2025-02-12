@@ -1,0 +1,215 @@
+.vehicle-details {
+    border: 1px solid #BDBDBD; /* Border around the entire vehicle details section */
+    border-radius: 14px; 
+    opacity: 1; /* Full visibility */
+    background-color: #FFFFFF; /* Background color */
+     /* Padding for spacing around the content */
+    margin-bottom: 15px; /* Space between stacked sections */
+    max-width: 100%;
+    width:100%;
+    box-sizing: border-box;
+  }
+  
+  .customer-section {
+    background: #FFF3E3;
+    padding: 15px;
+    border-radius: 14px 14px 0px 0px;
+  }
+  
+  .customer-name {
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.08px;
+    text-align: center;
+  }
+  .vehicle-info {
+    border-bottom: 1px solid #BDBDBD; /* Light grey separator */
+  }
+  
+  .vehicle-info .row {
+    padding: 20px;
+  }
+
+  
+  .edit-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px; /* Removed excessive top padding */
+    padding-right: 20px; /* Adds gap on the right side of the edit link */
+    margin-left: auto; /* Adds space between vehicle info and the edit section */
+  }
+  
+  .info-value {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .edit-link {
+    display: flex;
+    align-items: center;
+    color: #EC6625;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .edit-link i {
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .edit-link:hover {
+    color: #d45721; /* Darker shade when hovering */
+  }
+  
+  
+  .additional-details {
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #BDBDBD;
+    border-radius: 0px 0px 14px 14px;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .detail-label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Info Icon Styling */
+ /* Info Icon Styling */
+/* Info Icon Styling */
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;   /* White Background */
+    color: #000;        /* Black "i" Text */
+    width: 16px;  /* Smaller size */
+    height: 16px;
+    border: 1.5px solid #000; /* Thicker Black Border */
+    border-radius: 50%;  /* Circle Shape */
+    font-size: 12px; /* Smaller "i" */
+    font-weight: bold;
+    font-family: Arial, sans-serif; /* Proper "i" Styling */
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+  
+  
+  
+  /* Toggle Switch Styling */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 18px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #EC6625;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(16px);
+  }
+  
+  /* Dropdown Styling */
+  select {
+    padding: 5px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .vehicle-info .row {
+      flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+  
+    .vehicle-details-column {
+      padding-left: 0; /* Remove padding on smaller screens */
+      width: 100%; /* Full width for vehicle details column */
+    }
+  
+    .edit-column {
+      width: 100%; /* Full width for edit column */
+      padding-right: 0; /* Remove right padding on smaller screens */
+      margin-left: 0; /* Remove left margin */
+      text-align: center; /* Center the edit link */
+    }
+  }
+  
+  /* Additional media query for smaller screens (max-width: 480px) */
+  @media (max-width: 480px) {
+    .vehicle-details {
+      padding: 0 10px; /* Reduced padding on very small screens */
+    }
+  
+    .vehicle-info .row {
+      padding: 10px; /* Reduce padding for mobile view */
+    }
+  
+    .customer-section {
+      padding: 15px; /* Slightly reduced padding for smaller screens */
+    }
+  
+    .customer-name {
+      font-size: 14px; /* Smaller font size on small screens */
+    }
+  
+    .info-value {
+      font-size: 13px; /* Smaller text for better readability */
+    }
+  
+    .edit-link {
+      font-size: 12px; /* Smaller edit link font size */
+    }
+}
+  

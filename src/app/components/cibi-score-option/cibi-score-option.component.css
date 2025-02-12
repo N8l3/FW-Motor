@@ -1,0 +1,106 @@
+/* Main Banner */
+.cibil-banner {
+    background: #F5FDEE;
+    width: 100%; /* Adjust width dynamically */;
+    border-radius: 14px 14px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Discount Section */
+/* Discount Section */
+.discount-section {
+    display: flex;
+    align-items: center; /* Ensures everything is vertically aligned */
+    justify-content: space-between; /* Spreads items properly */
+    width: 100%;
+    gap: 10px; /* Adds space between items */
+}
+
+/* Discount Icon */
+.discount-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Text Content */
+.discount-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0; /* Prevents content from stretching */
+}
+
+/* Heading: Good Credit Score? */
+.credit-score-title {
+    font-size: 14px;
+    font-family: 'Mullish', sans-serif;
+    font-weight: 700;
+    color: #282828;
+    margin: 0; /* Remove extra margin */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Paragraph: Get an extra discount */
+.discount-text {
+    font-size: 12px;
+    font-family: 'Mullish', sans-serif;
+    font-weight: 400;
+    color: #282828;
+    margin: 0; /* Remove extra margin */
+}
+
+/* Apply Now Button */
+.apply-now {
+    font-size: 12px;
+    font-family: 'Mullish', sans-serif;
+    font-weight: 700;
+    flex:1;
+    color: #EC6625;
+    text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Ensures it aligns properly */
+    margin-left: auto;
+    white-space: nowrap; /* Prevents breaking into a new line */
+}
+
+
+
+/* Explore Discounts Section */
+.explore-discounts {
+    background: #FFF3E3;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 14px 14px;
+    margin-bottom: 15px;
+}
+
+/* Discount Tag Icon */
+.explore-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+/* Explore More Link */
+.explore-link {
+    font-size: 12px;
+    font-family: 'Mullish', sans-serif;
+    font-weight: 400;
+    color: #EC6625;
+    text-decoration: none;
+    border-bottom: 0.6px solid #EC6625;
+    padding-bottom: 2px;
+}
+
+.explore-link:hover {
+    color: #d9581f;
+    border-bottom-color: #d9581f;
+}

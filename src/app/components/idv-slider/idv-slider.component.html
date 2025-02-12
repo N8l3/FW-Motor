@@ -1,1 +1,37 @@
-<p>idv-slider works!</p>
+<div class="idv-container">
+  <div class="row">
+    <!-- Left Column: Labels (Stacked) -->
+    <div class="col-6 d-flex flex-column justify-content-center">
+      <span class="idv-label">Insured Declared Value (IDV)</span>
+      <a href="#" class="idv-link">What is It?</a>
+    </div>
+
+    <!-- Right Column: Input Field (Centered) -->
+    <div class="col-6 d-flex align-items-center">
+      <input type="number" [(ngModel)]="idvValue" (input)="updateSlider()" class="idv-input">
+    </div>
+  </div>
+
+  <!-- Dynamic Info Text -->
+  <div class="info-text">
+    {{ infoTextData.text }}
+  </div>
+
+  <!-- Slider Section -->
+  <div class="slider-container">
+    <input type="range" 
+      class="idv-slider" 
+      min="{{ minValue }}" 
+      max="{{ maxValue }}" 
+      step="1000" 
+      [(ngModel)]="idvValue" 
+      (input)="updateInput($event)"
+      [style.background]="'linear-gradient(to right, green ' + ((idvValue - minValue) / (maxValue - minValue) * 100) + '%, #ddd ' + ((idvValue - minValue) / (maxValue - minValue) * 100) + '%)'">
+  </div>
+
+  <!-- Min-Max Labels -->
+  <div class="slider-labels">
+    <span>{{ minValue | currency:'INR' }}</span>
+    <span>{{ maxValue | currency:'INR' }}</span>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+.vehicle-details-popup {
+    width: 100%;
+    max-width: 550px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: relative;
+    margin: 0 auto;
+    overflow-y: auto; /* Enables scrolling */
+}
+
+  
+  /* .vehicle-header {
+    background: #f8f6f6;
+    padding: 30px 20px;
+    font-size: 18px;
+    font-weight: bold;
+  } */
+  
+  .vehicle-header h2 {
+    margin: 0;
+  }
+  .vehicle-header {
+    background: #f8f6f6;
+    padding: 30px 20px ;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+ 
+}
+
+.vehicle-image-container {
+    position: absolute;
+    top:50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Adjust width as needed */
+    height: auto;
+}
+
+.vehicle-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50%; /* Optional: Makes it circular */
+}
+
+  
+  form {
+    flex-grow: 1; /* Ensures the form takes up the full height */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto; /* Enables scrolling inside form */
+}
+  .form-group {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .proceed-btn {
+    width: 100%; /* Matches input field width */
+    background: #ff6b3d;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: auto; /* Pushes button to the bottom */
+    position: sticky; /* Ensures it doesn't stick */
+}
+
+
+  

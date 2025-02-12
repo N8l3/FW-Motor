@@ -1,0 +1,210 @@
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content */
+.popup-content {
+    background: #fff;
+    width: 426px;
+    height: 578px;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1001;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:15px
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background: var(--Neutral-20, #EEEFF0); /* Grey circle */
+    
+    border: none;
+    border-radius: 50%; /* Makes it a circle */
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    z-index: 1000; /* Ensure it stays above all */
+}
+
+/* Policy Option Styles */
+.policy-option {
+    width: 378px;
+    padding: 15px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Selected Policy */
+.policy-option.selected {
+    background: #FFF2ED;
+    border: 2px solid #EC6625;
+}
+.popup-title{
+font-family: Mulish, sans-serif;
+font-weight: 700;
+font-size: 16px;
+
+
+}
+
+/* Header - Aligns radio button, text, and title properly */
+.option-header {
+    display: flex;
+    gap: 10px; /* Spacing between radio, title, and description */
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.option-header label {
+    font-family: Mulish, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000; /* Adjust color if needed */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+/* Ensure title and description stay in the same line */
+.option-header .desc {
+    font-family: Mulish, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #555; /* Adjust color if needed */
+    display: inline; /* Keep it on the same line */
+    margin-left: 5px; /* Space between title and description */
+    white-space: nowrap; /* Prevent line break */
+}
+
+
+/* Hide default radio button */
+.option-header input {
+    display: none;
+}
+
+/* Custom Radio Button */
+/* Custom Radio Button */
+.custom-radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #EC6625;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Inner Filled Circle - Hidden by default */
+.custom-radio::after {
+    content: "";
+    width: 10px; /* Size of the inner circle */
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* When selected, show the inner orange circle */
+.policy-option.selected .custom-radio::after {
+    background-color: #EC6625;
+}
+
+/* Policy Title Styling */
+.policy-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
+/* "Own damage + Third party" should be next to "Comprehensive" */
+.policy-title span {
+    font-weight: bold;
+}
+
+/* Policy Details */
+.policy-details {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-left: 30px;
+    text-align:start;
+    align-items: center;
+}
+
+/* Bullet Points (✓ Checkmark instead of tick icon) */
+.policy-details p::before {
+    content: "✔"; /* Unicode checkmark */
+    font-weight: bold;
+    font-size: 10px; /* Adjust size as needed */
+    width: 16px; /* Define circle size */
+    height: 16px;
+    line-height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #BDBDBD; /* Default grey */
+    color: white; /* Checkmark color */
+    margin-right: 5px;
+}
+
+/* When selected, make the bullet green */
+.policy-option.selected .policy-details p::before {
+    background-color: green;
+    color: white; /* Keep the checkmark white */
+}
+
+
+/* Note */
+.note {
+    font-size: 12px;
+   
+}
+
+/* Proceed Button - Fixed to bottom */
+.proceed-btn {
+    width: 100%;
+    background: #EC6625;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+}
