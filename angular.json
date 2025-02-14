@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fw-motor:build:production"
+              "buildTarget": "fw-motor:build:production"
             },
             "development": {
-              "browserTarget": "fw-motor:build:development"
+              "buildTarget": "fw-motor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fw-motor:build"
+            "buildTarget": "fw-motor:build"
           }
         },
         "test": {
