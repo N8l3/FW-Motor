@@ -6,21 +6,41 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./payad.component.css']
 })
 export class PAYADComponent {
-
-  selectedIndex: number = 2; // Default selection
-  sliderValues = [
-    { km: '2,500 km', discount: '79,563' },
-    { km: '5,000 km', discount: '1,43,311' },
-    { km: '7,500 km', discount: '1,51,618' },
-    { km: '10,000 km', discount: '1,61,586' },
-    { km: 'Unlimited km' }
+   sliderValues = [
+    { km: '2,500', discount: 3435 },
+    { km: '5,000', discount: 1620 },
+    { km: '7,500', discount: 1003 },
+    { km: '10,000', discount: 407 },
+    { km: 'Unlimited', discount: 0 },
   ];
 
-  ngAfterViewInit(): void {
-    this.updateSlider();
+  selectedIndex: number = 2; // Default to 7500
+  @ViewChild('slider') slider!: ElementRef<HTMLInputElement>;
+
+  ngAfterViewInit() {
+    this.updateSliderUI();
   }
 
-  updateSlider() {
-    console.log("Selected:", this.selectedIndex);
+  snapToBreakpoints(event: any): void {
+    const slider = event.target;
+    const value = parseInt(slider.value, 10);
+    this.selectedIndex = this.getClosestIndex(value);
+    slider.value = this.selectedIndex.toString();
+    this.updateSliderUI();
+  }
+
+  getClosestIndex(value: number): number {
+    return this.sliderValues.reduce((closest, _, index) =>
+      Math.abs(index - value) < Math.abs(closest - value) ? index : closest,
+      0
+    );
+  }
+
+  updateSliderUI(): void {
+    const percentage = (this.selectedIndex / (this.sliderValues.length - 1)) * 100;
+    this.slider.nativeElement.style.background = `linear-gradient(to right, #ec6625 ${percentage}%, #ddd ${percentage}%)`;
+  }
+  isActive(index: number): boolean {
+    return index <= this.selectedIndex;
   }
 }

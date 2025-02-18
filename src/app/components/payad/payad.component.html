@@ -1,44 +1,57 @@
 <div class="container payad-container">
-    <div class="row align-items-center">
-        <!-- Car Image -->
-        <div class="col-auto">
-            <img src="../../../assets/image (9).png" alt="Car Image" class="vehicle-image" />
-        </div>
-
-        <!-- Title Section -->
-        <div class="col-auto">
-            <div class="titleHolder">
-                <div class="title-text">
-                    <strong>Pay As You Drive! </strong>
-                </div>
-                <a class="open-link">How does it work?</a>
-            </div>
-        </div>
-
-        <!-- Slider Section -->
-        <div class="col">
-            <div class="slider-container">
-                <div class="slider-wrapper">
-                    <div class="slider-track">
-                        <div *ngFor="let value of sliderValues; let i = index"
-                            class="breakpoint"
-                            [class.active]="i <= selectedIndex">
-                        </div>
-                    </div>
-                    <input type="range" 
-                           min="0" 
-                           [max]="sliderValues.length - 1" 
-                           step="1" 
-                           [(ngModel)]="selectedIndex"
-                           (input)="updateSlider()">
-                </div>
-                <div class="labels">
-                    <div *ngFor="let value of sliderValues" class="label">
-                        <span [class.selected]="selectedIndex == sliderValues.indexOf(value)">{{ value.km }}</span>
-                        <div *ngIf="value.discount" class="discount">Save ₹{{ value.discount }}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row align-items-center">
+    <!-- Car Image -->
+    <div class="col-auto">
+      <img
+        src="../../../assets/image (9).png"
+        alt="Car Image"
+        class="vehicle-image"
+      />
     </div>
-</div>
+
+    <!-- Title Section -->
+    <div class="col-auto">
+      <div class="titleHolder">
+        <div class="title-text">
+          <strong>Pay As You Drive! </strong>
+        </div>
+        <a class="open-link">How does it work?</a>
+      </div>
+    </div>
+
+    <!-- Slider Section -->
+    <div class="col">
+      <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="slider-track">
+                <div
+                  *ngFor="let value of sliderValues; let i = index"
+                  class="breakpoint-wrapper"
+                >
+                  <!-- Breakpoints -->
+                  <div class="breakpoint" [ngClass]="{ active: isActive(i) }"></div>
+              
+                  <!-- Bar segments (only if not last) -->
+                  <div *ngIf="i < sliderValues.length - 1" class="bar-segment" [ngClass]="{ active: isActive(i) }"></div>
+                </div>
+              </div>
+          <input
+            type="range"
+            min="0"
+            [max]="sliderValues.length - 1"
+            step="1"
+            [(ngModel)]="selectedIndex"
+            (input)="snapToBreakpoints($event)"
+            (change)="snapToBreakpoints($event)"
+          />
+        </div>
+        <div class="labels">
+            <div *ngFor="let value of sliderValues; let i = index" class="label">
+              <span [ngClass]="{'selected': selectedIndex == i}">{{ value.km }}</span>
+              <div *ngIf="value.discount" class="discount">Save ₹{{ value.discount }}</div>
+            </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div> 

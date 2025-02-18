@@ -64,6 +64,7 @@
 /* Custom Slider Thumb */
 .idv-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
+    content: "< >";
     appearance: none;
     width: 30px; /* Increased size */
     height: 30px; /* Increased size */

@@ -1,1 +1,67 @@
-<p>plan-card-summary works!</p>
+<div class="carousel-container">
+  <div class="carousel-wrapper">
+    <div class="carousel" *ngFor="let carousel of carousels; let i = index">
+      <div
+        class="plan-card"
+        *ngFor="let plan of carousel.plans; let j = index"
+        [class.selected]="plan.selected"
+        (click)="selectPlan(i, j)"
+      >
+        <!-- Top Section with Background -->
+        <div class="top-section">
+            <div class="row plan-identity">
+                <div class="col">
+                  <!-- Title1 & Title2 in Same Row -->
+                  <div class="plan-title">
+                    <span class="bold-text">{{ plan.title1 }}</span>
+                    <span class="regular-text">{{ plan.title2 }}</span>
+                  </div>
+              
+                  <!-- Content in the Next Row -->
+                  <div class="plan-content">
+                    {{ plan.description }}
+                  </div>
+              
+                  <!-- Price in the Next Row -->
+                  <div class="plan-price">
+                    {{ plan.price | currency: 'INR' }}
+                  </div>
+                </div>
+                
+                <div class="col-auto">
+                  <input type="radio" class="plan-radio" [checked]="plan.selected" />
+                </div>
+              </div>
+              
+
+          <!-- Recommended Tag -->
+          <div *ngIf="plan.recommended" class="recommended-tag">
+            Recommended
+          </div>
+        </div>
+        <div class="own-damage-policy">
+            <p class="policy-text">
+              Own damage policy cover till <strong>Unlimited Km</strong>
+            </p>
+          </div>
+
+          <div class="addon-section">
+            <div class="addon">
+              <div class="addon-title">{{plan.addonTitle}}</div> <!-- Single title for all addons -->
+              <div class="addon-items">
+                <div class="addon-item" *ngFor="let item of plan.addons">
+                  <div class="addon-tick"></div>
+                  <span class="addon-name">{{ item.name }}</span>
+                  <span class="info-icon">i</span>
+                </div>
+              </div>
+            </div>
+          </div>    
+        
+
+        <button class="customize">Customize</button>
+        <div class="view-coverage">View coverage</div>
+      </div>
+    </div>
+  </div>
+</div>

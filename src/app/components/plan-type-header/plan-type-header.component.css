@@ -6,8 +6,10 @@
 }
 
 .header-panel {
-    height: 109px;
+    height: auto;
     background: #F5F5F5 !important;
+    overflow: hidden;
+    flex-wrap: wrap;
     padding: 10px 20px;
     width: 100%;
     display: flex;
@@ -22,18 +24,16 @@
     padding: 5px 10px; /* Adjust as needed to reduce gap */
 }
 
-/* Full-Width Container */
-
-
 /* Policy Section */
 .policy-section {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center everything */
+    align-items: center; /* Align items to the start */
     width: 100%;
-    text-align: center;
+    text-align: left; /* Align text to the left */
     padding: 5px 0;
 }
+
 
 /* Labels */
 .label {
@@ -41,14 +41,25 @@
     font-size: 14px;
     margin-bottom: 5px;
     width: 100%;
-    text-align: start; /* Ensure label is centered */
-    margin-left: 100px;;
+    text-align: left; /* Ensure label is aligned to the left */
 }
+
 .subtext {
     font-size: 12px;
     font-family: Mulish, sans-serif;
+    font-weight: 500px;  /* Adjust as needed */
+    display: block;  /* Forces it to appear below */
+    margin-top: 5px;  /* Adjusts spacing */
+    gap:12px
 }
-
+.policy-label{
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: start;
+    
+}
 .knowMore {
     font-size: 12px;
     font-weight: 700;
@@ -62,8 +73,9 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 5px;
-    justify-content: center; /* Center items */
+    justify-content: flex-start; /* Align items to the start */
     width: 100%;
+    flex-wrap: wrap;
 }
 
 /* Radio Buttons */
@@ -72,10 +84,15 @@
     align-items: center;
     gap: 5px;
     font-size: 14px;
+    font-weight: 700;
+
 }
 
 .radio input {
     accent-color: #e95926 !important;
+    accent-color: #e95926 !important;
+    width: 16px;
+    height: 16px;
 }
 
 /* "Want an Own Damage Policy?" Link */
@@ -92,8 +109,9 @@
 .tenure-group {
     display: flex;
     gap: 13px;
-    justify-content: center; /* Center tenure options */
+    justify-content: flex-start; /* Align tenure options to the start */
     width: 100%;
+    flex-wrap: wrap;
 }
 
 /* Common styling for tenure options */
@@ -138,7 +156,7 @@
 /* Selected state */
 .option.selected {
     border: 2px solid #e95926 !important;
-    background-color: #fde8df !important;
+    background: #FFF2EB !important;
     color: #e95926 !important;
 }
 
@@ -172,12 +190,14 @@
     z-index: 10;
     border: 1px solid #008000; /* Green border */
 }
+
+/* Back Button */
 .back-button {
-    width: 36px;  /* Increased size for better visibility */
-    height: 36px;
+    width: 34px;  /* Increased size for better visibility */
+    height: 34px;
     border: 1px solid #EC6625;
-    border-radius: 50%; /* Ensures a perfect circle */
-    background: #FFFFFF;
+    border-radius: 30px; /* Ensures a perfect circle */
+   background: #FFFFFF;
     color: #EC6625;
     font-size: 20px;
     font-weight: bold;
@@ -186,13 +206,21 @@
     align-items: center;
     cursor: pointer;
     outline: none;
-    margin-right: 5px; /* Space between the button and policy selection */
-    padding: 0;
+    margin-right: 12px; /* Space between the button and policy selection */
+    padding: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
     transition: all 0.2s ease-in-out; /* Smooth hover effect */
 }
-
-
+/* .back-button::before {
+    content: "<";
+    position: absolute;
+    width: 24px; 
+    height: 24px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+} */
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {

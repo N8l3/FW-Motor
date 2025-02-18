@@ -3,13 +3,10 @@
         <!-- Left Column - Policy Type -->
         <div class="col-md-6">
             <div class="policy-section">
-                <p class="label">Policy type:</p>
                 
-                <div class="d-flex align-items-center">
-                   <!-- Back Button -->
-                    
+                <div class="radio-container">
+                    <p class="policy-label">Policy type:</p>
                     <div class="radio-group d-flex align-items-center">
-                        <button class="back-button">&lt;</button>
                         <label class="radio">
                             <input type="radio" name="policy" [(ngModel)]="selectedPolicy" value="comprehensive">
                             <span>Comprehensive Policy</span>
@@ -22,13 +19,13 @@
                             <a href="#" class="damage-policy" (click)="openPolicyTypePopup()">Want an Own Damage policy?</a>
                         </label>
                     </div>
+                    <p class="subtext">
+                        This policy includes Own Damage (OD) + Third Party (TP)  
+                        <a class="knowMore">Know more</a>
+                    </p>
                 </div>
-                
-                <p class="subtext">
-                    This policy includes Own Damage (OD) + Third Party (TP)  
-                    <a class="knowMore">Know more</a>
-                </p>
             </div>
+            
         </div>
 
         <!-- Right Column - Policy Tenure -->

@@ -25,5 +25,6 @@ export class PlanTypeHeaderComponent {
 
   openPolicyTypePopup() {
     this.motorService.openPopup('policyTypePopup');
+    
   }
 }

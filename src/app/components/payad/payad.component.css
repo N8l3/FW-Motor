@@ -1,35 +1,33 @@
-/* Container Styles */
 .payad-container {
   max-width: 880px;
-  height: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   border-radius: 14px;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 10px;
-  gap: 10px;
-  border: 1px solid #BDBDBD;
+  gap: 15px;
+  border: 1px solid #bdbdbd;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Bootstrap Row Structure */
-.payad-container .row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-/* Car Image */
+/* Vehicle Image */
 .vehicle-image {
-  width: 100px;
+  width: 80px;
   height: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 100%;
 }
 
-/* Title and Link Section */
+/* Title Section */
 .titleHolder {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  min-width: 160px;
 }
 
 .title-text {
@@ -39,58 +37,67 @@
 
 .open-link {
   font-size: 14px;
-  color: #ff6f00;
-  text-decoration: none;
+  color: #EC6625 !important;
+    text-decoration: underline;
   cursor: pointer;
 }
 
 /* Slider Section */
 .slider-container {
+  flex-grow: 1;
   position: relative;
   width: 100%;
   max-width: 600px;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
-/* Custom Range Input */
+/* Slider Input */
 input[type="range"] {
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  cursor: pointer;
 }
 
 /* Custom Track */
 input[type="range"]::-webkit-slider-runnable-track {
-  height: 6px;
-  background: #ff6f00;
-  border-radius: 5px;
+  height: 5px;
+  background: transparent; /* Hidden track */
 }
 
-/* Custom Thumb */
+/* Custom Thumb (Dragger) */
 input[type="range"]::-webkit-slider-thumb {
+
   -webkit-appearance: none;
   appearance: none;
-  width: 24px;
-  height: 24px;
-  background: white;
-  border: 4px solid #ff6f00;
+  width: 32px;
+  height: 32px;
+    background: #ffffff;
+  border: 4px solid #ec6625;
   border-radius: 50%;
-  cursor: pointer;
-  margin-top: -9px;
+  cursor: grab;
+  margin-top: -12px;
   position: relative;
-  z-index: 3;
+  z-index: 4;
+  transition: transform 0.1s ease-in-out;
 }
 
-/* Breakpoints with Proper Gaps */
+
+/* Slider Wrapper */
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
+/* Slider Track - Discontinuous Bars */
 .slider-track {
   position: absolute;
   width: 100%;
@@ -99,30 +106,56 @@ input[type="range"]::-webkit-slider-thumb {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  padding: 0 10px;
+  z-index: 1;
 }
 
+/* Breakpoints (small circles) */
 .breakpoint {
-  width: 12px;
-  height: 12px;
-  background: #ff6f00;
+  width: 8px;
+  height: 8px;
+  border: 4px solid #FFF2ED;
+  ; /* Default: Light grey */
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  margin: 0 5px;
+  transition: background 0.3s, border-color 0.3s;
 }
 
-/* Labels with Gap */
+/* Bar Segments (Discontinuous Bars) */
+.bar-segment {
+  height: 6px;
+  width: 100px;
+  border-radius: 5px;
+  background: #FFF2ED; /* Default: Light grey */
+  margin: 0 8px;
+  transition: background 0.3s;
+}
+
+/* Active State (When Slider is Dragged) */
+.bar-segment.active {
+  background: #ec6625; /* Orange */
+}
+
+.breakpoint.active {
+  background: #ec6625;
+  border-color: #ec6625;
+}
+
+/* Labels */
 .labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 14px;
   width: 100%;
-  padding: 0 12px;
+  font-family: Mulish;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .label {
   text-align: center;
-  position: relative;
+  width: 100px; /* Matches bar width for proper alignment */
 }
 
 .label span {
@@ -131,7 +164,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-weight: bold;
 }
 
-/* Discount Label */
+/* Discount Labels */
 .discount {
   color: green;
   font-size: 12px;
