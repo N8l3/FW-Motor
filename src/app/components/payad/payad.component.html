@@ -1,9 +1,9 @@
 <div class="container payad-container">
   <div class="row align-items-center">
     <!-- Car Image -->
-    <div class="col-auto">
+    <div class="img-holder">
       <img
-        src="../../../assets/image (9).png"
+        src="../../../assets/maskgroup.png"
         alt="Car Image"
         class="vehicle-image"
       />
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Slider Section -->
-    <div class="col">
+    <div class="col-slider">
       <div class="slider-container">
         <div class="slider-wrapper">
             <div class="slider-track">
@@ -30,7 +30,6 @@
                 >
                   <!-- Breakpoints -->
                   <div class="breakpoint" [ngClass]="{ active: isActive(i) }"></div>
-              
                   <!-- Bar segments (only if not last) -->
                   <div *ngIf="i < sliderValues.length - 1" class="bar-segment" [ngClass]="{ active: isActive(i) }"></div>
                 </div>
@@ -46,7 +45,7 @@
           />
         </div>
         <div class="labels">
-            <div *ngFor="let value of sliderValues; let i = index" class="label">
+            <div *ngFor="let value of sliderValues; let i = index" class="label item{{i}}">
               <span [ngClass]="{'selected': selectedIndex == i}">{{ value.km }}</span>
               <div *ngIf="value.discount" class="discount">Save ₹{{ value.discount }}</div>
             </div>
@@ -54,4 +53,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>

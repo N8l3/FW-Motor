@@ -5,18 +5,19 @@
   align-items: center;
   border-radius: 14px;
   background: #ffffff;
-  padding: 10px;
+  /* padding: 10px; */
   gap: 15px;
   border: 1px solid #bdbdbd;
   overflow: hidden;
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Vehicle Image */
 .vehicle-image {
-  width: 80px;
+  width: auto;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   max-width: 100%;
 }
@@ -37,8 +38,8 @@
 
 .open-link {
   font-size: 14px;
-  color: #EC6625 !important;
-    text-decoration: underline;
+  color: #ec6625 !important;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -72,22 +73,29 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* Custom Thumb (Dragger) */
 input[type="range"]::-webkit-slider-thumb {
-
   -webkit-appearance: none;
   appearance: none;
-  width: 32px;
+  width: 33px;
   height: 32px;
-    background: #ffffff;
-  border: 4px solid #ec6625;
+  background: #ffffff;
+  border: 1px solid #ec6625;
+  outline: 3px solid #ec6625;
   border-radius: 50%;
   cursor: grab;
   margin-top: -12px;
   position: relative;
   z-index: 4;
+  content: "abg";
   transition: transform 0.1s ease-in-out;
+
+  background-image: url(../../../assets/expand_more.png);
+  background-size: 24px 24px; /* Ensures it doesn’t stretch */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0.8em;
+  image-rendering: crisp-edges; /* Helps with sharpness */
+  image-rendering: -webkit-optimize-contrast; /* For WebKit browsers */
 }
-
-
 /* Slider Wrapper */
 .slider-wrapper {
   position: relative;
@@ -102,9 +110,9 @@ input[type="range"]::-webkit-slider-thumb {
   position: absolute;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(15px, -2px);
   pointer-events: none;
   z-index: 1;
 }
@@ -113,14 +121,15 @@ input[type="range"]::-webkit-slider-thumb {
 .breakpoint {
   width: 8px;
   height: 8px;
-  border: 4px solid #FFF2ED;
-  ; /* Default: Light grey */
+  border: 4px solid #fff2ed; /* Default: Light grey */
   border-radius: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  transition: background 0.3s, border-color 0.3s;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
 }
 
 /* Bar Segments (Discontinuous Bars) */
@@ -128,7 +137,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 6px;
   width: 100px;
   border-radius: 5px;
-  background: #FFF2ED; /* Default: Light grey */
+  background: #fff2ed; /* Default: Light grey */
   margin: 0 8px;
   transition: background 0.3s;
 }
@@ -149,7 +158,7 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: space-between;
   width: 100%;
   font-family: Mulish;
-  font-weight: 700;
+  /* font-weight: 500; */
   font-size: 12px;
 }
 
@@ -161,7 +170,7 @@ input[type="range"]::-webkit-slider-thumb {
 .label span {
   display: block;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* Discount Labels */
@@ -169,4 +178,27 @@ input[type="range"]::-webkit-slider-thumb {
   color: green;
   font-size: 12px;
   margin-top: 4px;
+}
+.label.item0 {
+  position: relative;
+  left: -35px;
+}
+.label.item1 {
+  position: relative;
+  left: -10px;
+}
+.label.item2 {
+  position: relative;
+  left: 0;
+}
+.label.item3 {
+  position: relative;
+  left: 10px;
+}
+.label.item4 {
+  position: relative;
+  left: 35px;
+}
+.labels .label .selected {
+  font-weight: 700;
 }

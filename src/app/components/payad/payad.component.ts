@@ -7,11 +7,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class PAYADComponent {
    sliderValues = [
-    { km: '2,500', discount: 3435 },
-    { km: '5,000', discount: 1620 },
-    { km: '7,500', discount: 1003 },
-    { km: '10,000', discount: 407 },
-    { km: 'Unlimited', discount: 0 },
+    { km: '2,500 km', discount: 3435 },
+    { km: '5,000 km', discount: 1620 },
+    { km: '7,500 km', discount: 1003 },
+    { km: '10,000 km', discount: 407 },
+    { km: 'Unlimited km', discount: 0 },
   ];
 
   selectedIndex: number = 2; // Default to 7500
@@ -41,6 +41,6 @@ export class PAYADComponent {
     this.slider.nativeElement.style.background = `linear-gradient(to right, #ec6625 ${percentage}%, #ddd ${percentage}%)`;
   }
   isActive(index: number): boolean {
-    return index <= this.selectedIndex;
+    return index <= this.selectedIndex-1;
   }
 }
