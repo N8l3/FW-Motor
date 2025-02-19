@@ -58,7 +58,7 @@
     margin-bottom: 5px;
     width: 100%;
     text-align: start;
-    
+
 }
 .knowMore {
     font-size: 12px;
@@ -140,10 +140,11 @@
 /* Circular radio inside option */
 .option::before {
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     border: 2px solid #ccc !important;
+    /* outline: 1px solid #ccc; */
     color: #FFFFFF;
     position: absolute;
     left: 8px;
@@ -155,7 +156,7 @@
 
 /* Selected state */
 .option.selected {
-    border: 2px solid #e95926 !important;
+    border: none;
     background: #FFF2EB !important;
     color: #e95926 !important;
 }
@@ -163,7 +164,7 @@
 /* Selected state: tick mark */
 .option.selected::before {
     background: #e95926 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20.285 6.708a1 1 0 00-1.57-1.23L9.56 16.33l-4.26-4.276a1 1 0 10-1.42 1.41l5 5a1 1 0 001.43 0l10-10.256z"></path></svg>') no-repeat center;
-    background-size: 10px;
+    background-size: 16px;
     border: none;
 }
 
@@ -214,7 +215,7 @@
 /* .back-button::before {
     content: "<";
     position: absolute;
-    width: 24px; 
+    width: 24px;
     height: 24px;
     border-radius: 50%;
     background: #FFFFFF;

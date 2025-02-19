@@ -38,7 +38,9 @@ export class PAYADComponent {
 
   updateSliderUI(): void {
     const percentage = (this.selectedIndex / (this.sliderValues.length - 1)) * 100;
-    this.slider.nativeElement.style.background = `linear-gradient(to right, #ec6625 ${percentage}%, #ddd ${percentage}%)`;
+    if (this.slider?.nativeElement) {
+      this.slider.nativeElement.style.background = `linear-gradient(to right, #ec6625 ${percentage}%, #ddd ${percentage}%)`;
+    }
   }
   isActive(index: number): boolean {
     return index <= this.selectedIndex-1;
