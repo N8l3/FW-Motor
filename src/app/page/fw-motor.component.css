@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 879px;
 }
 
 /* Right Content (30%) */
@@ -34,6 +35,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 400px;
 }
 
 /* Responsive Design */

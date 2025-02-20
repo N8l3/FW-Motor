@@ -21,8 +21,8 @@ export class PlanCardSummaryComponent {
           addonTitle:'Includes',
           identity: { bold: 'Custom Selection', regular: '' },
           addons: [
-            { name: 'Roadside Assistance' },
-            { name: 'Windshield Protection' }
+            { name: 'Roadside Assistance', tooltip: '24/7 breakdown assistance for car troubles, anytime, anywhere.' },
+            { name: 'Windshield Protection', tooltip: '24/7 breakdown assistance for car troubles, anytime, anywhere.' }
           ]
         },
         {
@@ -37,13 +37,13 @@ export class PlanCardSummaryComponent {
           addonTitle:'Everything in No frills, plus',
           identity: { bold: 'Zero dep,', regular: 'zero worries' },
           addons: [
-            { name: 'Accident Recovery' },
-            { name: 'Extended Coverage' }
+            { name: 'Accident Recovery', tooltip:'24/7 breakdown assistance for car troubles, anytime, anywhere.' },
+            { name: 'Extended Coverage', tooltip: '24/7 breakdown assistance for car troubles, anytime, anywhere.' }
           ]
         },
         {
-          title1: 'Smart plan',
-          title2:',better pricing',
+          title1: 'Smart plan, ',
+          title2:'better pricing',
           description: 'Fair pricing based on usage and protection needs',
           price: 187683,
           coverage: 'Own damage policy cover till unlimited km',
@@ -53,8 +53,8 @@ export class PlanCardSummaryComponent {
           addonTitle:'Everything in Zero dep, plus',
           identity: { bold: 'Smart plan,', regular: 'better pricing' },
           addons: [
-            { name: 'Smart Saver Plus' },
-            { name: 'Key Protection' }
+            { name: 'Smart Saver Plus', tooltip: '24/7 breakdown assistance for car troubles, anytime, anywhere.' },
+            { name: 'Key Protection', tooltip: '24/7 breakdown assistance for car troubles, anytime, anywhere.' }
           ]
         }
       ]

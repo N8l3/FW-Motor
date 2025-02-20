@@ -1,363 +1,360 @@
 .carousel-container {
-    position: relative;
-    width: 879px;
-    height: 470px;
-    overflow: visible; /* Change from hidden to visible */
-    display: flex;
-    align-items: center;
-    background: #FFFFFF;
-    z-index: 1; /* Below recommended tag */
-  }
-  
-  .carousel-wrapper {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-    width: calc(281px * 3);
-  }
-  
-  .carousel {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  .carousel-wrapper,
-.plan-card {
   position: relative;
-  z-index: 2; /* Below recommended tag */
-}
-  
-.plan-card {
-    position: relative;
-    width: 287px;
-    height: 460px;
-    border: 1px solid #ddd;
-    align-items: center;
-    border-radius: 10px;
-    background: white;
-    margin-right: 10px;
-    cursor: pointer;
-    overflow: visible !important; /* Ensure Recommended Tag is not clipped */
-    z-index: 2; /* Below recommended tag */
-  }
-  
-  /* Selected Plan */
-  .plan-card.selected {
-    border: 1px solid #EC6625;
-    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
-  }
-  
-  /* Top Section */
-  .top-section {
-    width: 100%;
-    height: 130px;
-    background: #FFF2ED;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    box-sizing: border-box;
-    transition: background 0.3s ease-in-out;
-    z-index: 2; /* Below recommended tag */
-  }
-  .plan-card.selected .top-section {
-    background: linear-gradient(180deg, #F58820 0%, #B02A30 100%);
-    color: white;
-    padding: 10px; /* Ensure padding remains consistent */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 879px;
+  height: 470px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  z-index: 1;
 }
 
-  /* Recommended Tag */
-  .recommended-tag {
-    width: 115px;
-    height: 26px;
-    background: #00305B;
-    color: #FFFFFF;
-    font-family: Mulish;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17.57px;
-    border-radius: 4px;
-    padding: 4px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    /* Absolute Positioning for Full Visibility */
-    position: absolute;
-    top: -13px; /* Adjusted so it appears above */
-    left: 50%;
-    transform: translateX(-50%);
-  
-    /* Ensure It Appears Above Everything */
-    z-index: 9999 !important; 
-    pointer-events: none; /* Prevent interaction issues */
-  }
-  /* Radio Button (Top Right) */
-  .plan-radio {
-    position: absolute;
-  
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #B02A30;
-    background: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
-    appearance: none; /* Removes default blue highlight */
-    outline: none;
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  width: 843px;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.plan-card {
+  width: 287px;
+  height: 460px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  /* margin-right: 10px; */
+  cursor: pointer;
+  overflow: visible !important;
+  position: relative;
+  /* z-index: 2; */
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card.selected {
+  border-color: #ec6625;
+  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+.bold-text {
+  font-weight: 700;
+  font-size: 16px;
+}
+.regular-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.top-section {
+  width: 100%;
+  height: 130px;
+  background: #fff2ed;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: background 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.plan-card.selected .top-section {
+  background: linear-gradient(180deg, #f58820 0%, #b02a30 100%);
+  color: #fff;
+}
+
+.recommended-tag {
+  width: 115px;
+  height: 26px;
+  background: #00305b;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+
+.plan-radio {
+  position: absolute;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #bdbdbd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  appearance: none;
+  outline: none;
+  right: 20px;
+  top: 25px;
 }
 
 .plan-card.selected .plan-radio {
-    background: white;
-    border: 2px solid #EC6625;
-    width: 20px;
-    height: 20px;
+  background: #fff;
+  border-color: #ec6625;
 }
 
 .plan-card.selected .plan-radio::after {
-    content: "✔";
-    font-size: 10px;
-    color: #EC6625;
-    font-weight: bold;
+  content: "✔";
+  font-size: 12px;
+  color: #ec6625;
+  font-weight: bold;
 }
-  /* Scroll Buttons */
-  .scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
-  }
-  
-  .scroll-btn.left {
-    left: 0;
-  }
-  
-  .scroll-btn.right {
-    right: 0;
-  }
-  .plan-identity {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px; /* Adjust spacing */
-}
-  
-  .plan-card.selected .plan-identity {
-    color: white; /* Change color when selected */
-    margin-left: 10px;
-    gap:10px
 
-  }
-  
-  .plan-identity .bold-text {
-    font-family: 'Mullish', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-   
-  }
-  
-  .plan-identity .regular-text {
-    font-family: 'Mullish', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-
-  }
-  .plan-title {
-    display: flex;
-    gap: 5px; /* Space between title1 & title2 */
-    font-family: 'Mulish', sans-serif;
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
 }
-.plan-content {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    margin-top: 2px; /* Adjust spacing */
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+.plan-identity {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px;
+  line-height: 1.2;
+}
+.plan-content-header{
+  font-size: 12px;
+  font-weight: 500;
+}
+.plan-identity .header-content {
+  flex: 7.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+.plan-identity .header-action {
+  flex: 2.5;
+}
+
+
+.plan-card.selected .plan-identity {
+  color: white;
+}
+
+.plan-title {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.plan-content,
+.policy-text,
+.addon-name {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.plan-card-footer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  line-height: 2.5;
 }
 
 .plan-price {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 25.1px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    margin-top: 4px; /* Adjust spacing */
+  font-weight: 900;
+  font-size: 20px;
 }
-.own-damage-policy {
-    height: 27px;
-    background: #EDF6FF;
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    box-sizing: border-box;
-    z-index: 1; /* Ensure it sits below other elements if needed */
-  }
-  .policy-text {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 12px;
-    line-height: 15.06px;
-    letter-spacing: 0px;
-    color: #000000;
-  }
-  
-  .policy-text strong {
-    font-weight: 700; /* Make "Unlimited Km" bold */
-  }
 
-  /* Add-on Section */
-  .addon-section {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .addon {
-    width: 100%;
-    max-width: 500px;
-    padding: 15px;
-    background: #F9F9F9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .addon-title {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17.57px;
-    color: #212121;
-    padding: 5px 0;
-    margin-bottom: 15px;
-  }
-  
-  .addon-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Gap between each add-on item */
-  }
-  
-  .addon-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 5px 0;
-  }
-  
-  .addon-tick {
-    width: 16px;
-    height: 16px;
-    background: #01A252; /* Green color */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .addon-tick::after {
-    content: '\2713'; /* Checkmark character */
-    color: white;
-    font-size: 10px;
-  }
-  
-  .addon-name {
-    font-family: 'Mullish', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15.06px;
-    letter-spacing: 0px;
-    color: #212121;
-  }
-  
- .info-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;   /* White Background */
-    color: #000;        /* Black "i" Text */
-    width: 16px;  /* Smaller size */
-    height: 16px;
-    border: 1.5px solid #000; /* Thicker Black Border */
-    border-radius: 50%;  /* Circle Shape */
-    font-size: 12px; /* Smaller "i" */
-    font-weight: bold;
-    font-family: Arial, sans-serif; /* Proper "i" Styling */
-    cursor: pointer;
-    text-align: center;
+.own-damage-policy {
+  height: 27px;
+  background: #edf6ff;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
 }
-/* Customize Button */
+
+.addon-section {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.addon {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  /* background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.addon-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.addon-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.addon-tick {
+  width: 16px;
+  height: 16px;
+  /* color: #01a252; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addon-tick::after {
+  content: "\2713";
+  color: #01a252;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #000;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #000;
+  border-radius: 50%;
+  font-size: 12px;
+  /* font-weight: bold; */
+  cursor: pointer;
+  text-align: center;
+}
+
+.customize,
+.view-coverage {
+  position: absolute;
+  bottom: 20px;
+  border-radius: 8px;
+  border-width: 1px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .customize {
-    position: absolute;
-    bottom: 20px; /* Fix at the bottom of the card */
-    left: 20px;
-    width: 100px;
-    height: 32px;
-    gap: 8px;
-    border-radius: 8px;
-    border-width: 1px;
-    padding-top: 5px;
-    padding-right: 12px;
-    padding-bottom: 8px;
-    background: var(--Utility-Primary-Background, #FFFFFF);
-    border: 1px solid var(--Brand-Primary, #EC6625);
-    color:var(--Brand-Primary, #EC6625);
-    z-index: 2;
-  }
-  
-  /* View Coverage Button */
-  .view-coverage {
-    position: absolute;
-    bottom: 25px; /* Fixed at the bottom of the card */
-    right: 20px; /* Align to the right */
-    font-family: 'Mulish', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: var(--Brand-Primary, #EC6625);
-    cursor: pointer;
-    z-index: 2;
-    /* Center vertically with Customize button */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  /* Scroll Buttons */
-  .scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
-  }
-  
-  .scroll-btn.left {
-    left: 0;
-  }
-  
-  .scroll-btn.right {
-    right: 0;
-  }
-  
-  
-  
+  left: 20px;
+  width: 100px;
+  height: 32px;
+  background: #fff;
+  border: 1px solid #ec6625;
+  color: #ec6625;
+}
+
+.view-coverage {
+  right: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #ec6625;
+  cursor: pointer;
+}
+.info-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.info-icon .tooltip-icon-text {
+  visibility: hidden;
+  width: 220px;
+  background-color: #232323;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  z-index: 99;
+}
+
+.info-icon .tooltip-icon-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #232323 transparent transparent transparent;
+}
+
+.info-icon:hover .tooltip-icon-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+.customize:hover {
+background: #FFF2EB;
+border: 1px solid #EC6625;
+color: #EC6625;
+}
+.customize:focus-visible {
+background: #FFF9F6;
+border: 1px solid #EC6625;
+color: #EC6625;
+}
+.customize:active {
+background: #FFF9F6;
+border: 1px solid #BB5106;
+color: #BB5106;
+}
